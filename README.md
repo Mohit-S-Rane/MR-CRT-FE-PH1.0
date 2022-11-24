@@ -16,10 +16,8 @@ CarRentX is a car rental platform, supplier oriented, with a backend for managin
 
 ## Authors
 
-Contributors names and contact info
-[MSR](http://mohitsrane.com)
+Mohit Rane [@Mohit_S_Rane](http://mohitsrane.com) follow me on 
 
-## Running unit tests
+## License
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
+This project is licensed under the **GPL** License - see the LICENSE.md file for details
