@@ -29,6 +29,7 @@
             [target]="item.target || '_self'"
             [matTooltip]="item.tooltip || ''">
             <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
+            <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
         </a>
     </ng-container>
 
@@ -39,6 +40,7 @@
             [ngClass]="{'msr-horizontal-navigation-item-active-forced': item.active}"
             [matTooltip]="item.tooltip || ''"
             (click)="item.function(item)">
+            <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
             <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
         </div>
     </ng-container>
@@ -58,6 +60,7 @@
             [matTooltip]="item.tooltip || ''"
             (click)="item.function(item)">
             <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
+            <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
         </div>
     </ng-container>
 
@@ -71,6 +74,7 @@
             (click)="item.function(item)"
             mat-menu-item>
             <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
+            <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
         </a>
     </ng-container>
 
@@ -81,12 +85,14 @@
             [ngClass]="{'msr-horizontal-navigation-item-active-forced': item.active}"
             [matTooltip]="item.tooltip || ''">
             <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
+            <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
         </div>
     </ng-container>
 
     <!-- Item is disabled -->
     <ng-container *ngIf="item.disabled">
         <div class="msr-horizontal-navigation-item msr-horizontal-navigation-item-disabled">
+            <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
             <ng-container *ngTemplateOutlet="itemTemplate"></ng-container>
         </div>
     </ng-container>

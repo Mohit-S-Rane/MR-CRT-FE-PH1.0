@@ -48,6 +48,8 @@ export class MsrHorizontalNavigationBasicItemComponent implements OnInit, OnDest
         // Set the "isActiveMatchOptions" either from item's
         // "isActiveMatchOptions" or the equivalent form of
         // item's "exactMatch" option
+        console.log(this.item.link);
+        
         this.isActiveMatchOptions =
             this.item.isActiveMatchOptions ?? this.item.exactMatch
                 ? this._msrUtilsService.exactMatchOptions
