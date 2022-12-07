@@ -100,6 +100,7 @@ export class ModernLayoutComponent implements OnInit, OnDestroy
     }
 
     navigateToHome() {
-        this._router.navigate(['/dashboards/project'])
+        this._router.navigate(['/home'])
+        // this._router.navigate(['/dashboards/project'])
     }
 }
