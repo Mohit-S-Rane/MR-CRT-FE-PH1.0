@@ -430,4 +430,8 @@ export class ProjectComponent implements OnInit, OnDestroy
             }
         };
     }
+
+    navigateToSetting() {
+        this._router.navigate(['/pages/settings'])
+    }
 }
