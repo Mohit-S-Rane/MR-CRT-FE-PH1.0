@@ -1,0 +1,56 @@
+// html, body {margin: 0; height: 100%; overflow: hidden}
+
+.no-scroll-div {
+  overflow-y: hidden; // hide vertical
+  overflow-x: hidden; // hide horizontal
+}
+
+.car-image {
+  transform: rotate(352deg);
+}
+
+.launch-bt {
+  float: left !important;
+  //   margin-top: 0 !important;
+}
+
+.home-header {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+#cust_container {
+  position: relative;
+}
+
+#img2 {
+  position: absolute;
+}
+
+.hd-1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 5rem;
+}
+
+.ml-6r {
+  margin-left: 6rem;
+}
+
+.logo-w {
+  width: 12rem;
+  margin-top: 5rem;
+}
+
+.bt-m {
+  padding: 1rem;
+}
+
+.btn-p {
+  margin-top: 3rem !important;
+  margin-right: 1.5rem;
+}
+
+.btn-w {
+  width: 10rem !important;
+}

@@ -61,6 +61,7 @@ export const appRoutes: Route[] = [
         },
         children   : [
             {path: 'home', loadChildren: () => import('app/modules/landing/home/home.module').then(m => m.LandingHomeModule)},
+            {path: 'landing-page', loadChildren: () => import('app/modules/landing/landing-page/landing-page.module').then(m => m.LandingPageModule)},
         ]
     },
 
