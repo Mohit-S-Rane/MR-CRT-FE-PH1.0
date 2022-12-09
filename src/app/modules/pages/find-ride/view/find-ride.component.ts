@@ -2,11 +2,14 @@ import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, NgForm, Validators } from '@angular/forms';
 import { MsrAlertType } from '@msr/components/alert';
 import { AuthService } from 'app/core/auth/auth.service';
+import { msrAnimations } from '@msr/animations';
+
 
 @Component({
     selector     : 'find-ride',
     templateUrl  : './find-ride.component.html',
     styleUrls    : ['./find-ride.component.scss'],
+    animations   : msrAnimations,
     encapsulation: ViewEncapsulation.None
 })
 export class FindRideComponent
@@ -20,6 +23,7 @@ export class FindRideComponent
     };
     comingSoonForm: UntypedFormGroup;
     showAlert: boolean = false;
+    imgUrl: string;
 
     /**
      * Constructor
@@ -29,6 +33,8 @@ export class FindRideComponent
         private _formBuilder: UntypedFormBuilder
     )
     {
+        this.imgUrl = 'Mercedes_Benz_GLK';      //default
+        // this.imgUrl = 'Land_Rover_Defender';
     }
 
     // -----------------------------------------------------------------------------------------------------
@@ -84,5 +90,9 @@ export class FindRideComponent
             };
 
         }, 1000);
+    }
+
+    switchImgage(selectedImageName){
+        this.imgUrl = selectedImageName;
     }
 }

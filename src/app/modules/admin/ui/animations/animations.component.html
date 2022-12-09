@@ -1,7 +1,8 @@
 <div class="flex flex-col flex-auto min-w-0">
 
     <!-- Header -->
-    <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent">
+    <div
+        class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent">
         <div class="flex-1 min-w-0">
             <!-- Breadcrumbs -->
             <div class="flex flex-wrap items-center font-medium">
@@ -24,21 +25,19 @@
         <div class="max-w-3xl prose prose-sm">
 
             <p>
-                Msr provides set of ready-to-use animations for convenience. You can access them by importing the <code>MsrAnimations</code> and set it as the
+                Msr provides set of ready-to-use animations for convenience. You can access them by importing the
+                <code>MsrAnimations</code> and set it as the
                 <em>animations</em> property of the <em>@Component</em> metadata.
             </p>
 
             <h2>Module</h2>
-            <textarea
-                msr-highlight
-                lang="typescript">
+            <textarea msr-highlight lang="typescript">
                 import { MsrAnimations } from '@msr/animations';
             </textarea>
 
             <h2>Usage</h2>
             <!-- @formatter:off -->
-            <textarea msr-highlight
-                      lang="typescript">
+            <textarea msr-highlight lang="typescript">
                 @Component({
                     selector   : 'my-component',
                     templateUrl: './my-component.component.html',
@@ -70,7 +69,8 @@
                 </li>
             </ol>
             <p>
-                The animation can be disabled by setting the state to <b>false</b>; <code>[@expandCollapse]="false"</code>
+                The animation can be disabled by setting the state to <b>false</b>;
+                <code>[@expandCollapse]="false"</code>
             </p>
 
             <div class="example-viewer">
@@ -78,16 +78,12 @@
                 <div class="title">
                     <h6>Expand / Collapse</h6>
                     <div class="controls">
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="animationStates.expandCollapse === 'expanded' ? animationStates.expandCollapse = 'collapsed' : animationStates.expandCollapse = 'expanded'">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="visibilityStates.expandCollapse = !visibilityStates.expandCollapse;
                                      animationStates.expandCollapse === 'expanded' ? animationStates.expandCollapse = 'collapsed' : animationStates.expandCollapse = 'expanded'">
                             Toggle *ngIf
@@ -101,9 +97,7 @@
 
                         <ng-template matTabContent>
 
-                            <div
-                                class="animated-box"
-                                *ngIf="visibilityStates.expandCollapse"
+                            <div class="animated-box" *ngIf="visibilityStates.expandCollapse"
                                 [@expandCollapse]="animationStates.expandCollapse">
                                 <div class="animated-box-content">
                                     Animated box
@@ -117,9 +111,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -173,17 +165,12 @@
                 <div class="title">
                     <h6>Shake</h6>
                     <div class="controls">
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('shake.shake', false, true, 150)">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('shake.shake')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('shake.shake')">
                             Toggle *ngIf
                         </button>
                     </div>
@@ -197,9 +184,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.shake.shake"
+                                <div class="animated-box" *ngIf="visibilityStates.shake.shake"
                                     [@shake]="animationStates.shake.shake">
                                     <div class="animated-box-content">
                                         Animated box
@@ -215,9 +200,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -267,9 +250,7 @@
             </p>
             <mat-form-field class="msr-mat-no-subscript">
                 <mat-label>Direction</mat-label>
-                <mat-select
-                    [value]="'in'"
-                    #fadeInSelect>
+                <mat-select [value]="'in'" #fadeInSelect>
                     <mat-option [value]="'in'">In</mat-option>
                     <mat-option [value]="'top'">Top</mat-option>
                     <mat-option [value]="'bottom'">Bottom</mat-option>
@@ -279,25 +260,17 @@
             </mat-form-field>
 
             <!-- In -->
-            <div
-                class="example-viewer"
-                *ngIf="fadeInSelect.value === 'in'">
+            <div class="example-viewer" *ngIf="fadeInSelect.value === 'in'">
 
                 <div class="title">
                     <h6>Fade In</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleAnimationState('fadeIn.in', 'void', '*')">
+                        <button mat-button [color]="'primary'" (click)="toggleAnimationState('fadeIn.in', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('fadeIn.in')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('fadeIn.in')">
                             Toggle *ngIf
                         </button>
 
@@ -312,9 +285,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.fadeIn.in"
+                                <div class="animated-box" *ngIf="visibilityStates.fadeIn.in"
                                     [@fadeIn]="animationStates.fadeIn.in">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -328,9 +299,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -359,25 +328,18 @@
             </div>
 
             <!-- Top -->
-            <div
-                class="example-viewer"
-                *ngIf="fadeInSelect.value === 'top'">
+            <div class="example-viewer" *ngIf="fadeInSelect.value === 'top'">
 
                 <div class="title">
                     <h6>Fade In Top</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('fadeIn.top', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('fadeIn.top')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('fadeIn.top')">
                             Toggle *ngIf
                         </button>
 
@@ -392,9 +354,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.fadeIn.top"
+                                <div class="animated-box" *ngIf="visibilityStates.fadeIn.top"
                                     [@fadeInTop]="animationStates.fadeIn.top">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -408,9 +368,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -439,25 +397,18 @@
             </div>
 
             <!-- Bottom -->
-            <div
-                class="example-viewer"
-                *ngIf="fadeInSelect.value === 'bottom'">
+            <div class="example-viewer" *ngIf="fadeInSelect.value === 'bottom'">
 
                 <div class="title">
                     <h6>Fade In Bottom</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('fadeIn.bottom', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('fadeIn.bottom')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('fadeIn.bottom')">
                             Toggle *ngIf
                         </button>
 
@@ -472,9 +423,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.fadeIn.bottom"
+                                <div class="animated-box" *ngIf="visibilityStates.fadeIn.bottom"
                                     [@fadeInBottom]="animationStates.fadeIn.bottom">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -488,9 +437,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -519,25 +466,18 @@
             </div>
 
             <!-- Left -->
-            <div
-                class="example-viewer"
-                *ngIf="fadeInSelect.value === 'left'">
+            <div class="example-viewer" *ngIf="fadeInSelect.value === 'left'">
 
                 <div class="title">
                     <h6>Fade In Left</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('fadeIn.left', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('fadeIn.left')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('fadeIn.left')">
                             Toggle *ngIf
                         </button>
 
@@ -552,9 +492,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.fadeIn.left"
+                                <div class="animated-box" *ngIf="visibilityStates.fadeIn.left"
                                     [@fadeInLeft]="animationStates.fadeIn.left">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -568,9 +506,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -599,25 +535,18 @@
             </div>
 
             <!-- Right -->
-            <div
-                class="example-viewer"
-                *ngIf="fadeInSelect.value === 'right'">
+            <div class="example-viewer" *ngIf="fadeInSelect.value === 'right'">
 
                 <div class="title">
                     <h6>Fade In Right</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('fadeIn.right', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('fadeIn.right')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('fadeIn.right')">
                             Toggle *ngIf
                         </button>
 
@@ -632,9 +561,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.fadeIn.right"
+                                <div class="animated-box" *ngIf="visibilityStates.fadeIn.right"
                                     [@fadeInRight]="animationStates.fadeIn.right">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -648,9 +575,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -700,9 +625,7 @@
             </p>
             <mat-form-field class="msr-mat-no-subscript">
                 <mat-label>Direction</mat-label>
-                <mat-select
-                    [value]="'out'"
-                    #fadeOutSelect>
+                <mat-select [value]="'out'" #fadeOutSelect>
                     <mat-option [value]="'out'">Out</mat-option>
                     <mat-option [value]="'top'">Top</mat-option>
                     <mat-option [value]="'bottom'">Bottom</mat-option>
@@ -712,25 +635,18 @@
             </mat-form-field>
 
             <!-- Out -->
-            <div
-                class="example-viewer"
-                *ngIf="fadeOutSelect.value === 'out'">
+            <div class="example-viewer" *ngIf="fadeOutSelect.value === 'out'">
 
                 <div class="title">
                     <h6>Fade Out</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('fadeOut.out', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('fadeOut.out')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('fadeOut.out')">
                             Toggle *ngIf
                         </button>
 
@@ -745,9 +661,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.fadeOut.out"
+                                <div class="animated-box" *ngIf="visibilityStates.fadeOut.out"
                                     [@fadeOut]="animationStates.fadeOut.out">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -761,9 +675,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -792,25 +704,18 @@
             </div>
 
             <!-- Top -->
-            <div
-                class="example-viewer"
-                *ngIf="fadeOutSelect.value === 'top'">
+            <div class="example-viewer" *ngIf="fadeOutSelect.value === 'top'">
 
                 <div class="title">
                     <h6>Fade Out Top</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('fadeOut.top', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('fadeOut.top')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('fadeOut.top')">
                             Toggle *ngIf
                         </button>
 
@@ -825,9 +730,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.fadeOut.top"
+                                <div class="animated-box" *ngIf="visibilityStates.fadeOut.top"
                                     [@fadeOutTop]="animationStates.fadeOut.top">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -841,9 +744,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -872,25 +773,18 @@
             </div>
 
             <!-- Bottom -->
-            <div
-                class="example-viewer"
-                *ngIf="fadeOutSelect.value === 'bottom'">
+            <div class="example-viewer" *ngIf="fadeOutSelect.value === 'bottom'">
 
                 <div class="title">
                     <h6>Fade Out Bottom</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('fadeOut.bottom', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('fadeOut.bottom')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('fadeOut.bottom')">
                             Toggle *ngIf
                         </button>
 
@@ -905,9 +799,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.fadeOut.bottom"
+                                <div class="animated-box" *ngIf="visibilityStates.fadeOut.bottom"
                                     [@fadeOutBottom]="animationStates.fadeOut.bottom">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -921,9 +813,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -952,25 +842,18 @@
             </div>
 
             <!-- Left -->
-            <div
-                class="example-viewer"
-                *ngIf="fadeOutSelect.value === 'left'">
+            <div class="example-viewer" *ngIf="fadeOutSelect.value === 'left'">
 
                 <div class="title">
                     <h6>Fade Out Left</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('fadeOut.left', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('fadeOut.left')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('fadeOut.left')">
                             Toggle *ngIf
                         </button>
 
@@ -985,9 +868,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.fadeOut.left"
+                                <div class="animated-box" *ngIf="visibilityStates.fadeOut.left"
                                     [@fadeOutLeft]="animationStates.fadeOut.left">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -1001,9 +882,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -1032,25 +911,18 @@
             </div>
 
             <!-- Right -->
-            <div
-                class="example-viewer"
-                *ngIf="fadeOutSelect.value === 'right'">
+            <div class="example-viewer" *ngIf="fadeOutSelect.value === 'right'">
 
                 <div class="title">
                     <h6>Fade Out Right</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('fadeOut.right', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('fadeOut.right')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('fadeOut.right')">
                             Toggle *ngIf
                         </button>
 
@@ -1065,9 +937,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.fadeOut.right"
+                                <div class="animated-box" *ngIf="visibilityStates.fadeOut.right"
                                     [@fadeOutRight]="animationStates.fadeOut.right">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -1081,9 +951,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -1133,9 +1001,7 @@
             </p>
             <mat-form-field class="msr-mat-no-subscript">
                 <mat-label>Direction</mat-label>
-                <mat-select
-                    [value]="'top'"
-                    #slideInSelect>
+                <mat-select [value]="'top'" #slideInSelect>
                     <mat-option [value]="'top'">Top</mat-option>
                     <mat-option [value]="'bottom'">Bottom</mat-option>
                     <mat-option [value]="'left'">Left</mat-option>
@@ -1144,25 +1010,18 @@
             </mat-form-field>
 
             <!-- Top -->
-            <div
-                class="example-viewer"
-                *ngIf="slideInSelect.value === 'top'">
+            <div class="example-viewer" *ngIf="slideInSelect.value === 'top'">
 
                 <div class="title">
                     <h6>Slide In Top</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('slideIn.top', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('slideIn.top')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('slideIn.top')">
                             Toggle *ngIf
                         </button>
 
@@ -1177,9 +1036,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.slideIn.top"
+                                <div class="animated-box" *ngIf="visibilityStates.slideIn.top"
                                     [@slideInTop]="animationStates.slideIn.top">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -1193,9 +1050,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -1224,25 +1079,18 @@
             </div>
 
             <!-- Bottom -->
-            <div
-                class="example-viewer"
-                *ngIf="slideInSelect.value === 'bottom'">
+            <div class="example-viewer" *ngIf="slideInSelect.value === 'bottom'">
 
                 <div class="title">
                     <h6>Slide In Bottom</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('slideIn.bottom', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('slideIn.bottom')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('slideIn.bottom')">
                             Toggle *ngIf
                         </button>
 
@@ -1257,9 +1105,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.slideIn.bottom"
+                                <div class="animated-box" *ngIf="visibilityStates.slideIn.bottom"
                                     [@slideInBottom]="animationStates.slideIn.bottom">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -1273,9 +1119,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -1304,25 +1148,18 @@
             </div>
 
             <!-- Left -->
-            <div
-                class="example-viewer"
-                *ngIf="slideInSelect.value === 'left'">
+            <div class="example-viewer" *ngIf="slideInSelect.value === 'left'">
 
                 <div class="title">
                     <h6>Slide In Left</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('slideIn.left', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('slideIn.left')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('slideIn.left')">
                             Toggle *ngIf
                         </button>
 
@@ -1337,9 +1174,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.slideIn.left"
+                                <div class="animated-box" *ngIf="visibilityStates.slideIn.left"
                                     [@slideInLeft]="animationStates.slideIn.left">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -1353,9 +1188,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -1384,25 +1217,18 @@
             </div>
 
             <!-- Right -->
-            <div
-                class="example-viewer"
-                *ngIf="slideInSelect.value === 'right'">
+            <div class="example-viewer" *ngIf="slideInSelect.value === 'right'">
 
                 <div class="title">
                     <h6>Slide In Right</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('slideIn.right', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('slideIn.right')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('slideIn.right')">
                             Toggle *ngIf
                         </button>
 
@@ -1417,9 +1243,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.slideIn.right"
+                                <div class="animated-box" *ngIf="visibilityStates.slideIn.right"
                                     [@slideInRight]="animationStates.slideIn.right">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -1433,9 +1257,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -1485,9 +1307,7 @@
             </p>
             <mat-form-field class="msr-mat-no-subscript">
                 <mat-label>Direction</mat-label>
-                <mat-select
-                    [value]="'top'"
-                    #slideOutSelect>
+                <mat-select [value]="'top'" #slideOutSelect>
                     <mat-option [value]="'top'">Top</mat-option>
                     <mat-option [value]="'bottom'">Bottom</mat-option>
                     <mat-option [value]="'left'">Left</mat-option>
@@ -1496,25 +1316,18 @@
             </mat-form-field>
 
             <!-- Top -->
-            <div
-                class="example-viewer"
-                *ngIf="slideOutSelect.value === 'top'">
+            <div class="example-viewer" *ngIf="slideOutSelect.value === 'top'">
 
                 <div class="title">
                     <h6>Slide Out Top</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('slideOut.top', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('slideOut.top')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('slideOut.top')">
                             Toggle *ngIf
                         </button>
 
@@ -1529,9 +1342,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.slideOut.top"
+                                <div class="animated-box" *ngIf="visibilityStates.slideOut.top"
                                     [@slideOutTop]="animationStates.slideOut.top">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -1545,9 +1356,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -1576,25 +1385,18 @@
             </div>
 
             <!-- Bottom -->
-            <div
-                class="example-viewer"
-                *ngIf="slideOutSelect.value === 'bottom'">
+            <div class="example-viewer" *ngIf="slideOutSelect.value === 'bottom'">
 
                 <div class="title">
                     <h6>Slide Out Bottom</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('slideOut.bottom', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('slideOut.bottom')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('slideOut.bottom')">
                             Toggle *ngIf
                         </button>
 
@@ -1609,9 +1411,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.slideOut.bottom"
+                                <div class="animated-box" *ngIf="visibilityStates.slideOut.bottom"
                                     [@slideOutBottom]="animationStates.slideOut.bottom">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -1625,9 +1425,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -1656,25 +1454,18 @@
             </div>
 
             <!-- Left -->
-            <div
-                class="example-viewer"
-                *ngIf="slideOutSelect.value === 'left'">
+            <div class="example-viewer" *ngIf="slideOutSelect.value === 'left'">
 
                 <div class="title">
                     <h6>Slide Out Left</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('slideOut.left', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('slideOut.left')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('slideOut.left')">
                             Toggle *ngIf
                         </button>
 
@@ -1689,9 +1480,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.slideOut.left"
+                                <div class="animated-box" *ngIf="visibilityStates.slideOut.left"
                                     [@slideOutLeft]="animationStates.slideOut.left">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -1705,9 +1494,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -1736,25 +1523,18 @@
             </div>
 
             <!-- Right -->
-            <div
-                class="example-viewer"
-                *ngIf="slideOutSelect.value === 'right'">
+            <div class="example-viewer" *ngIf="slideOutSelect.value === 'right'">
 
                 <div class="title">
                     <h6>Slide Out Right</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('slideOut.right', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('slideOut.right')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('slideOut.right')">
                             Toggle *ngIf
                         </button>
 
@@ -1769,9 +1549,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.slideOut.right"
+                                <div class="animated-box" *ngIf="visibilityStates.slideOut.right"
                                     [@slideOutRight]="animationStates.slideOut.right">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -1785,9 +1563,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -1842,17 +1618,11 @@
                     <h6>Zoom In</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleAnimationState('zoomIn.in', 'void', '*')">
+                        <button mat-button [color]="'primary'" (click)="toggleAnimationState('zoomIn.in', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('zoomIn.in')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('zoomIn.in')">
                             Toggle *ngIf
                         </button>
 
@@ -1867,9 +1637,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.zoomIn.in"
+                                <div class="animated-box" *ngIf="visibilityStates.zoomIn.in"
                                     [@zoomIn]="animationStates.zoomIn.in">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -1883,9 +1651,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"
@@ -1940,17 +1706,12 @@
                     <h6>Zoom Out</h6>
                     <div class="controls">
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
+                        <button mat-button [color]="'primary'"
                             (click)="toggleAnimationState('zoomOut.out', 'void', '*')">
                             Toggle state
                         </button>
 
-                        <button
-                            mat-button
-                            [color]="'primary'"
-                            (click)="toggleVisibilityState('zoomOut.out')">
+                        <button mat-button [color]="'primary'" (click)="toggleVisibilityState('zoomOut.out')">
                             Toggle *ngIf
                         </button>
 
@@ -1965,9 +1726,7 @@
 
                             <div class="centered">
 
-                                <div
-                                    class="animated-box"
-                                    *ngIf="visibilityStates.zoomOut.out"
+                                <div class="animated-box" *ngIf="visibilityStates.zoomOut.out"
                                     [@zoomOut]="animationStates.zoomOut.out">
                                     <div class="animated-box-content">Animated box</div>
                                 </div>
@@ -1981,9 +1740,7 @@
                     <mat-tab label="HTML">
 
                         <!-- @formatter:off -->
-                        <textarea
-                            msr-highlight
-                            [lang]="'html'">
+                        <textarea msr-highlight [lang]="'html'">
                             <!-- Using state -->
                             <div
                                 class="animated-box"

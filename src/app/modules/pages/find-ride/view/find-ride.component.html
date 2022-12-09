@@ -1,34 +1,31 @@
 <div class="flex flex-col flex-auto items-center sm:justify-center min-w-0 md:p-8">
-    <div class="flex md:w-full md:max-w-6xl sm:rounded-2xl sm:shadow overflow-hidden sm:bg-card">
-        <div class="w-full sm:w-160">
-            <div class="w-full max-w-120 sm:w-120 mx-auto sm:mx-0">
+    <div class="flex md:w-full md:max-w-6xl sm:rounded-2xl sm:shadow overflow-hidden sm:bg-card" style="height: 35rem !important;">
+        <div class="w-full sm:w-100">
+            <div class="w-full max-w-120 sm:w-100 mx-auto sm:mx-0">
                 <!-- Logo -->
                 <form class="flex flex-col bg-card shadow rounded overflow-hidden">
-                    <div class="bg-gray-50 dark:bg-gray-700 p-8 border-b">
+                    <div class="bg-gray-50 dark:bg-gray-700 border-b p-fld">
                         <p class="text-lg font-medium fs-2r">Find Best Rental Car</p>
                         <p class="text-secondary">Luxury Cars at low-cost, starts $75 / day
                             from over 100 premium locations</p>
                     </div>
                     <div class="flex flex-col p-8">
-                        <mat-form-field class="msr-mat-dense flex-auto">
-                            <mat-select>
-                                <mat-option value="language-1">VW Passat CC</mat-option>
-                                <mat-option value="language-2">Mercedes-Benz GLK</mat-option>
-                                <mat-option value="language-3">BMW 320 ModernLine</mat-option>
-                                <mat-option value="language-4">Toyota Camry</mat-option>
-                                <mat-option value="language-5">Audi A1 S-LINE</mat-option>
-                                <mat-option value="language-6">VW Golf VII</mat-option>
+                        <mat-form-field class="msr-mat-dense flex-auto" name="myForm">
+                            <mat-select name="switch" id="switchImage" [placeholder]="'Mercedes-Benz GLK'" (selectionChange)="switchImgage($event.value)">
+                                <mat-option value="Mercedes_Benz_GLK">Mercedes-Benz GLK</mat-option>
+                                <mat-option value="Audi_A4L">Audi A4L</mat-option>
+                                <mat-option value="Land_Rover_Velar">Land Rover Velar</mat-option>
+                                <mat-option value="Land_Rover_Vogue">Land Rover Vogue</mat-option>
+                                <mat-option value="Land_Rover_Defender">Land Rover Defender</mat-option>
+                                <mat-option value="Toyota_Land_Cruiser">Toyota Land Cruiser</mat-option>
                             </mat-select>
-                            <span matPrefix>Select Your Car Type</span>
+                            <span matPrefix>Select Car Type</span>
                         </mat-form-field>
                         <mat-form-field class="msr-mat-dense flex-auto">
                             <mat-select>
-                                <mat-option value="language-1">VW Passat CC</mat-option>
-                                <mat-option value="language-2">Mercedes-Benz GLK</mat-option>
-                                <mat-option value="language-3">BMW 320 ModernLine</mat-option>
-                                <mat-option value="language-4">Toyota Camry</mat-option>
-                                <mat-option value="language-5">Audi A1 S-LINE</mat-option>
-                                <mat-option value="language-6">VW Golf VII</mat-option>
+                                <mat-option value="Santa Monica - 2102 Lincoln Blvd">Santa Monica - 2102 Lincoln Blvd</mat-option>
+                                <mat-option value="Los Angeles - 5711 W Century Blvd">Los Angeles - 5711 W Century Blvd</mat-option>
+                                <mat-option value="Las Vegas - 6401 Centennial Center Blvd">Las Vegas - 6401 Centennial Center Blvd</mat-option>
                             </mat-select>
                             <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:location-marker'">
                             </mat-icon>
@@ -36,12 +33,9 @@
                         </mat-form-field>
                         <mat-form-field class="msr-mat-dense flex-auto">
                             <mat-select>
-                                <mat-option value="language-1">VW Passat CC</mat-option>
-                                <mat-option value="language-2">Mercedes-Benz GLK</mat-option>
-                                <mat-option value="language-3">BMW 320 ModernLine</mat-option>
-                                <mat-option value="language-4">Toyota Camry</mat-option>
-                                <mat-option value="language-5">Audi A1 S-LINE</mat-option>
-                                <mat-option value="language-6">VW Golf VII</mat-option>
+                                <mat-option value="3669  Oliver Street Wedgwood Texas">3669  Oliver Street Wedgwood Texas</mat-option>
+                                <mat-option value="330  Hornor Avenue Kiefer Oklahoma">330  Hornor Avenue Kiefer Oklahoma</mat-option>
+                                <mat-option value="3240  Timbercrest Road SAN PEDRO California">3240  Timbercrest Road SAN PEDRO California</mat-option>
                             </mat-select>
                             <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:location-marker'">
                             </mat-icon>
@@ -53,7 +47,7 @@
                             <mat-datepicker #picker2></mat-datepicker>
                             <span matPrefix>Pick-up</span>
                         </mat-form-field>
-                        <mat-form-field [ngClass]="formFieldHelpers" class="flex-auto">
+                        <mat-form-field [ngClass]="formFieldHelpers" class="flex-auto" style="height: 3rem !important;">
                             <input matInput [matDatepicker]="picker3" [placeholder]="'Choose a date'">
                             <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
                             <mat-datepicker #picker3></mat-datepicker>
@@ -61,28 +55,25 @@
                         </mat-form-field>
                     </div>
 
-                    <div class="flex items-center justify-end border-t px-8 py-5 bg-gray-50 dark:bg-gray-700">
-                        <button mat-button>
-                            Cancel
-                        </button>
+                    <div class="flex items-center justify-center border-t px-8 bg-gray-50 dark:bg-gray-700 bk-btn">
                         <button class="px-6 ml-3" mat-flat-button [color]="'primary'">
-                            Save
+                            Book Now
                         </button>
                     </div>
                 </form>
             </div>
         </div>
         <div
-            class="relative hidden md:flex flex-auto items-center justify-center h-full p-16 lg:px-28 overflow-hidden bg-gray-800 dark:border-l">
+            class="relative hidden md:flex flex-auto items-center justify-center h-full p-16 overflow-hidden bg-gray-800 dark:border-l">
             <!-- Background - @formatter:off -->
             <!-- Rings -->
-            <svg class="absolute inset-0 pointer-events-none" viewBox="0 0 960 540" width="100%" height="100%"
+            <!-- <svg class="absolute inset-0 pointer-events-none" viewBox="0 0 960 540" width="100%" height="100%"
                 preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
                 <g class="text-gray-700 opacity-25" fill="none" stroke="currentColor" stroke-width="100">
                     <circle r="234" cx="196" cy="23"></circle>
                     <circle r="234" cx="790" cy="491"></circle>
                 </g>
-            </svg>
+            </svg> -->
             <!-- Dots -->
             <svg class="absolute -top-16 -right-16 text-gray-700" viewBox="0 0 220 192" width="220" height="192"
                 fill="none">
@@ -94,37 +85,10 @@
                 </defs>
                 <rect width="220" height="192" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
             </svg>
-            <!-- @formatter:on -->
             <!-- Content -->
-            <div class="z-10 relative w-full max-w-2xl">
-                <img src="../../../../../assets/images/cars/car2.png" alt="car_2">
-
-                <!-- <div class="text-7xl font-bold leading-none text-gray-100">
-                    <div>Welcome to</div>
-                    <div>our community</div>
-                </div>
-                <div class="mt-6 text-lg tracking-tight leading-6 text-gray-400">
-                    Msr helps developers to build organized and well coded dashboards full of beautiful and rich
-                    modules.
-                    Join us and start building your application today.
-                </div>
-                <div class="flex items-center mt-8">
-                    <div class="flex flex-0 items-center -space-x-1.5">
-                        <img class="flex-0 w-10 h-10 rounded-full ring-4 ring-offset-1 ring-gray-800 ring-offset-gray-800 object-cover"
-                            src="assets/images/avatars/female-18.jpg">
-                        <img class="flex-0 w-10 h-10 rounded-full ring-4 ring-offset-1 ring-gray-800 ring-offset-gray-800 object-cover"
-                            src="assets/images/avatars/female-11.jpg">
-                        <img class="flex-0 w-10 h-10 rounded-full ring-4 ring-offset-1 ring-gray-800 ring-offset-gray-800 object-cover"
-                            src="assets/images/avatars/male-09.jpg">
-                        <img class="flex-0 w-10 h-10 rounded-full ring-4 ring-offset-1 ring-gray-800 ring-offset-gray-800 object-cover"
-                            src="assets/images/avatars/male-16.jpg">
-                    </div>
-                    <div class="ml-4 font-medium tracking-tight text-gray-400">More than 17k people joined us, it's your
-                        turn</div>
-                </div> -->
+            <div>
+                <img src="../../../../../assets/images/cars/{{imgUrl}}.png" alt="car_2">
             </div>
         </div>
     </div>
 </div>
-
-<!-- <img src="../../../../../assets/images/cars/car2.png" alt="car_2"> -->
