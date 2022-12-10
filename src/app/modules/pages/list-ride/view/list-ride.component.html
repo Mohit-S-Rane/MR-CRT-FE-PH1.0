@@ -1,0 +1,131 @@
+<div class="flex flex-col flex-auto items-center sm:justify-center min-w-0 md:p-8">
+    <div class="flex md:w-full md:max-w-6xl sm:rounded-2xl sm:shadow overflow-hidden sm:bg-card"
+        style="height: 35rem !important;">
+        <div class="w-full sm:w-100">
+            <div class="w-full max-w-120 sm:w-100 mx-auto sm:mx-0">
+                <!-- Logo -->
+                <form class="flex flex-col bg-card shadow rounded overflow-hidden">
+                    <div class="bg-gray-50 dark:bg-gray-700 border-b p-fld">
+                        <p class="text-lg font-medium fs-2r">List Your Ride Here</p>
+                        <p class="text-secondary">Luxury Cars at low-cost, starts $75 / day
+                            from over 100 premium locations</p>
+                    </div>
+                    <div class="flex flex-col p-8">
+                        <mat-form-field class="msr-mat-dense flex-auto" name="myForm">
+                            <mat-select name="switch" id="switchImage" [placeholder]="'Mercedes-Benz GLK'"
+                                (selectionChange)="switchImgage($event.value)">
+                                <mat-option value="Mercedes_Benz_GLK">Mercedes-Benz GLK</mat-option>
+                                <mat-option value="Audi_A4L">Audi A4L</mat-option>
+                                <mat-option value="Land_Rover_Velar">Land Rover Velar</mat-option>
+                                <mat-option value="Land_Rover_Vogue">Land Rover Vogue</mat-option>
+                                <mat-option value="Land_Rover_Defender">Land Rover Defender</mat-option>
+                                <mat-option value="Toyota_Land_Cruiser">Toyota Land Cruiser</mat-option>
+                            </mat-select>
+                            <span matPrefix>Select Your Car Brand</span>
+                        </mat-form-field>
+                        <mat-form-field [ngClass]="formFieldHelpers" class="flex-auto">
+                            <input matInput [matDatepicker]="picker3">
+                            <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                            <mat-datepicker #picker3></mat-datepicker>
+                            <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:calendar'"></mat-icon>
+                            <span matPrefix>Registration Date</span>
+                        </mat-form-field>
+                        <mat-form-field class="msr-mat-dense flex-auto">
+                            <mat-select>
+                                <mat-option value="Santa Monica - 2102 Lincoln Blvd">Santa Monica - 2102 Lincoln
+                                    Blvd</mat-option>
+                                <mat-option value="Los Angeles - 5711 W Century Blvd">Los Angeles - 5711 W Century
+                                    Blvd</mat-option>
+                                <mat-option value="Las Vegas - 6401 Centennial Center Blvd">Las Vegas - 6401 Centennial
+                                    Center Blvd</mat-option>
+                            </mat-select>
+                            <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:view-grid-add'">
+                            </mat-icon>
+                            <span matPrefix>Model Name</span>
+                        </mat-form-field>
+                        <mat-form-field class="flex-auto">
+                            <input matInput [placeholder]="'License No Enter Here'">
+                            <mat-icon class="icon-size-5" matPrefix [svgIcon]="'feather:file-text'"></mat-icon>
+                            <button mat-icon-button matSuffix>
+                                <div *ngIf="!isClick" (click)="clickToVerify()">
+                                    <mat-icon class="icon-size-5" title="Click to Verify"
+                                        [svgIcon]="'heroicons_solid:badge-check'"></mat-icon>
+                                </div>
+                                <div *ngIf="isClick">
+                                    <mat-icon class="icon-size-5" title="Click to Verify" style="color: green;"
+                                        [svgIcon]="'heroicons_solid:badge-check'"></mat-icon>
+                                </div>
+                            </button>
+                        </mat-form-field>
+                        <mat-form-field class="msr-mat-dense flex-auto" style="height: 3rem !important;">
+                            <mat-select>
+                                <mat-option value="One">One</mat-option>
+                                <mat-option value="Two">Two</mat-option>
+                                <mat-option value="Three">Three</mat-option>
+                                <mat-option value="Four">Four</mat-option>
+                                <mat-option value="Five">Five</mat-option>
+                                <mat-option value="Six">Six</mat-option>
+                                <mat-option value="Seven">Seven</mat-option>
+                                <mat-option value="Plus_Seven">Seven Plus</mat-option>
+                            </mat-select>
+                            <img class="icon-size-5" matPrefix src="../../../../../assets/icons/car-seat.png" alt="">
+                            <span matPrefix>Seating Capacity</span>
+                        </mat-form-field>
+                        <!-- <mat-form-field class="msr-mat-dense flex-auto" style="height: 3rem !important;">
+                            <mat-select>
+                                <mat-option value="White">White</mat-option>
+                                <mat-option value="Black">Black</mat-option>
+                                <mat-option value="Gray">Gray</mat-option>
+                                <mat-option value="Silver">Silver</mat-option>
+                                <mat-option value="Red">Red</mat-option>
+                                <mat-option value="Brown">Brown</mat-option>
+                                <mat-option value="Green">Green</mat-option>
+                                <mat-option value="Orange">Orange</mat-option>
+                                <mat-option value="Beige">Beige</mat-option>
+                                <mat-option value="Purple">Purple</mat-option>
+                                <mat-option value="Gold">Gold</mat-option>
+                                <mat-option value="Yellow">Yellow</mat-option>
+                                <mat-option value="Other">Other</mat-option>
+                            </mat-select>
+                            <img class="icon-size-5" matPrefix src="../../../../../assets/icons/car-seat.png" alt="">
+                            <span matPrefix>Color</span>
+                        </mat-form-field> -->
+                    </div>
+
+                    <div class="flex items-center justify-center border-t px-8 bg-gray-50 dark:bg-gray-700 bk-btn">
+                        <button class="px-6 ml-3" mat-flat-button [color]="'primary'">
+                            Book Now
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div
+            class="relative hidden md:flex flex-auto items-center justify-center h-full p-16 overflow-hidden bg-gray-800 dark:border-l">
+            <!-- Background - @formatter:off -->
+            <!-- Rings -->
+            <!-- <svg class="absolute inset-0 pointer-events-none" viewBox="0 0 960 540" width="100%" height="100%"
+                preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+                <g class="text-gray-700 opacity-25" fill="none" stroke="currentColor" stroke-width="100">
+                    <circle r="234" cx="196" cy="23"></circle>
+                    <circle r="234" cx="790" cy="491"></circle>
+                </g>
+            </svg> -->
+            <!-- Dots -->
+            <svg class="absolute -top-16 -right-16 text-gray-700" viewBox="0 0 220 192" width="220" height="192"
+                fill="none">
+                <defs>
+                    <pattern id="837c3e70-6c3a-44e6-8854-cc48c737b659" x="0" y="0" width="20" height="20"
+                        patternUnits="userSpaceOnUse">
+                        <rect x="0" y="0" width="4" height="4" fill="currentColor"></rect>
+                    </pattern>
+                </defs>
+                <rect width="220" height="192" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
+            </svg>
+            <!-- Content -->
+            <div>
+                <img class="img-effect" src="../../../../../assets/images/cars/{{imgUrl}}.png" alt="car_2">
+            </div>
+        </div>
+    </div>
+</div>
