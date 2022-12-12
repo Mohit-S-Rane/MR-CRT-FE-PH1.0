@@ -17,7 +17,7 @@ export const appRoutes: Route[] = [
     // After the user signs in, the sign in page will redirect the user to the 'signed-in-redirect'
     // path. Below is another redirection for that path to redirect the user to the desired
     // location. This is a small convenience to keep all main routes together here on this file.
-    {path: 'signed-in-redirect', pathMatch : 'full', redirectTo: 'dashboards/project'},
+    {path: 'signed-in-redirect', pathMatch : 'full', redirectTo: 'onboarding/complete-reservation'},
 
     // Auth routes for guests
     {
@@ -37,6 +37,22 @@ export const appRoutes: Route[] = [
         ]
     },
 
+    {
+        path: '',
+        canActivate: [NoAuthGuard],
+        canActivateChild: [NoAuthGuard],
+        component: LayoutComponent,
+        data: {
+            layout: 'empty'
+        },
+        children   : [
+            {path: 'home', loadChildren: () => import('app/modules/landing/home/home.module').then(m => m.LandingHomeModule)},
+            {path: 'landing-page', loadChildren: () => import('app/modules/landing/landing-page/landing-page.module').then(m => m.LandingPageModule)},
+            {path: 'find-ride', loadChildren: () => import('app/modules/pages/find-ride/find-ride.module').then(m => m.FindRideModule)},
+            {path: 'list-ride', loadChildren: () => import('app/modules/pages/list-ride/list-ride.module').then(m => m.ListRideModule)},
+        ]
+    },
+
     // Auth routes for authenticated users
     {
         path: '',
@@ -53,19 +69,19 @@ export const appRoutes: Route[] = [
     },
 
     // Landing routes
-    {
-        path: '',
-        component  : LayoutComponent,
-        data: {
-            layout: 'empty'
-        },
-        children   : [
-            {path: 'home', loadChildren: () => import('app/modules/landing/home/home.module').then(m => m.LandingHomeModule)},
-            {path: 'landing-page', loadChildren: () => import('app/modules/landing/landing-page/landing-page.module').then(m => m.LandingPageModule)},
-            {path: 'find-ride', loadChildren: () => import('app/modules/pages/find-ride/find-ride.module').then(m => m.FindRideModule)},
-            {path: 'list-ride', loadChildren: () => import('app/modules/pages/list-ride/list-ride.module').then(m => m.ListRideModule)},
-        ]
-    },
+    // {
+    //     path: '',
+    //     component  : LayoutComponent,
+    //     data: {
+    //         layout: 'empty'
+    //     },
+    //     children   : [
+    //         {path: 'home', loadChildren: () => import('app/modules/landing/home/home.module').then(m => m.LandingHomeModule)},
+    //         {path: 'landing-page', loadChildren: () => import('app/modules/landing/landing-page/landing-page.module').then(m => m.LandingPageModule)},
+    //         {path: 'find-ride', loadChildren: () => import('app/modules/pages/find-ride/find-ride.module').then(m => m.FindRideModule)},
+    //         {path: 'list-ride', loadChildren: () => import('app/modules/pages/list-ride/list-ride.module').then(m => m.ListRideModule)},
+    //     ]
+    // },
 
     // Admin routes
     {
@@ -84,6 +100,27 @@ export const appRoutes: Route[] = [
                 {path: 'analytics', loadChildren: () => import('app/modules/admin/dashboards/analytics/analytics.module').then(m => m.AnalyticsModule)},
                 {path: 'finance', loadChildren: () => import('app/modules/admin/dashboards/finance/finance.module').then(m => m.FinanceModule)},
                 {path: 'crypto', loadChildren: () => import('app/modules/admin/dashboards/crypto/crypto.module').then(m => m.CryptoModule)},
+            ]},
+
+            // Onboarding
+            {path: 'onboarding', children: [
+                {path: 'complete-reservation', loadChildren: () => import('app/modules/pages/onboarding/complete-reservation/complete-reservation.model').then(m => m.CompleteReservationModule)},
+                {path: 'payment', loadChildren: () => import('app/modules/pages/onboarding/complete-reservation/complete-reservation.model').then(m => m.CompleteReservationModule)},
+            ]},
+
+            // Admin -- Dashboard
+            {path: 'admin', children: [
+                {path: 'dashboard', loadChildren: () => import('app/modules/pages/onboarding/complete-reservation/complete-reservation.model').then(m => m.CompleteReservationModule)},
+            ]},
+
+            // Consumer -- Dashboard
+            {path: 'consumer', children: [
+                {path: 'dashboard', loadChildren: () => import('app/modules/pages/onboarding/complete-reservation/complete-reservation.model').then(m => m.CompleteReservationModule)},
+            ]},
+
+            // Associate -- Dashboard
+            {path: 'associate', children: [
+                {path: 'dashboard', loadChildren: () => import('app/modules/pages/onboarding/complete-reservation/complete-reservation.model').then(m => m.CompleteReservationModule)},
             ]},
 
             // Apps
