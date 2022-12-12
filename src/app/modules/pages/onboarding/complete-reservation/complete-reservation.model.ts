@@ -16,6 +16,11 @@ import { HelpCenterSupportComponent } from 'app/modules/admin/apps/help-center/s
 import { CompleteReservationRoutes } from './complete-reservation.routing';
 import { CompleteReservationComponent } from './view/complete-reservation.component';
 import { NewHelpCenterFaqsModule } from '../../test-module/help-center-faq.module';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
     declarations: [
@@ -35,8 +40,11 @@ import { NewHelpCenterFaqsModule } from '../../test-module/help-center-faq.modul
         MatInputModule,
         MsrAlertModule,
         SharedModule,
-        // NewHelpCenterFaqsModule
-
+        MatCheckboxModule,
+        MatDividerModule,
+        MatMenuModule,
+        MatRadioModule,
+        MatSelectModule,
     ]
 })
 export class CompleteReservationModule
