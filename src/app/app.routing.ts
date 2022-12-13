@@ -10,7 +10,7 @@ import { InitialDataResolver } from 'app/app.resolvers';
 export const appRoutes: Route[] = [
 
     // Redirect empty path to '/dashboards/project'
-    {path: '', pathMatch : 'full', redirectTo: 'dashboards/project'},
+    {path: '', pathMatch : 'full', redirectTo: 'home'},
 
     // Redirect signed in user to the '/dashboards/project'
     //
@@ -105,7 +105,7 @@ export const appRoutes: Route[] = [
             // Onboarding
             {path: 'onboarding', children: [
                 {path: 'complete-reservation', loadChildren: () => import('app/modules/pages/onboarding/complete-reservation/complete-reservation.model').then(m => m.CompleteReservationModule)},
-                {path: 'payment', loadChildren: () => import('app/modules/pages/onboarding/complete-reservation/complete-reservation.model').then(m => m.CompleteReservationModule)},
+                // {path: 'payment', loadChildren: () => import('app/modules/pages/onboarding/payment/payment-flow.module').then(m => m.PaymentFlowModule)},
             ]},
 
             // Admin -- Dashboard
@@ -122,6 +122,10 @@ export const appRoutes: Route[] = [
             {path: 'associate', children: [
                 {path: 'dashboard', loadChildren: () => import('app/modules/pages/onboarding/complete-reservation/complete-reservation.model').then(m => m.CompleteReservationModule)},
             ]},
+
+            //Pages for All Users
+            {path: 'payment', pathMatch: 'full', loadChildren: () => import('app/modules/pages/onboarding/payment/payment-flow.module').then(m => m.PaymentFlowModule)},
+
 
             // Apps
             {path: 'apps', children: [
