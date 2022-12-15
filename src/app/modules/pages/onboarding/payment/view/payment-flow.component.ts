@@ -14,27 +14,14 @@ import { msrAnimations } from '@msr/animations';
 })
 export class PaymentFlowComponent
 {
-    formFieldHelpers: string[] = [''];
-    @ViewChild('comingSoonNgForm') comingSoonNgForm: NgForm;
-
-    alert: { type: MsrAlertType; message: string } = {
-        type   : 'success',
-        message: ''
-    };
-    comingSoonForm: UntypedFormGroup;
-    showAlert: boolean = false;
-    imgUrl: string;
+    horizontalStepperForm: UntypedFormGroup;
+    verticalStepperForm: UntypedFormGroup;
 
     /**
      * Constructor
      */
-    constructor(
-        private _authService: AuthService,
-        private _formBuilder: UntypedFormBuilder
-    )
+    constructor(private _formBuilder: UntypedFormBuilder)
     {
-        this.imgUrl = 'Mercedes_Benz_GLK';      //default
-        // this.imgUrl = 'Land_Rover_Defender';
     }
 
     // -----------------------------------------------------------------------------------------------------
@@ -46,53 +33,50 @@ export class PaymentFlowComponent
      */
     ngOnInit(): void
     {
-        // Create the form
-        this.comingSoonForm = this._formBuilder.group({
-            email: ['', [Validators.required, Validators.email]]
+        // Horizontal stepper form
+        this.horizontalStepperForm = this._formBuilder.group({
+            step1: this._formBuilder.group({
+                email   : ['', [Validators.required, Validators.email]],
+                country : ['', Validators.required],
+                language: ['', Validators.required]
+            }),
+            step2: this._formBuilder.group({
+                firstName: ['', Validators.required],
+                lastName : ['', Validators.required],
+                userName : ['', Validators.required],
+                about    : ['']
+            }),
+            step3: this._formBuilder.group({
+                byEmail          : this._formBuilder.group({
+                    companyNews     : [true],
+                    featuredProducts: [false],
+                    messages        : [true]
+                }),
+                pushNotifications: ['everything', Validators.required]
+            })
         });
-    }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Public methods
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * Sign in
-     */
-    register(): void
-    {
-        // Return if the form is invalid
-        if ( this.comingSoonForm.invalid )
-        {
-            return;
-        }
-
-        // Disable the form
-        this.comingSoonForm.disable();
-
-        // Hide the alert
-        this.showAlert = false;
-
-        // Do your action here...
-        // Emulate server delay
-        setTimeout(() => {
-
-            // Re-enable the form
-            this.comingSoonForm.enable();
-
-            // Reset the form
-            this.comingSoonNgForm.resetForm();
-
-            // Set the alert
-            this.alert = {
-                type   : 'success',
-                message: 'You have been registered to the list.'
-            };
-
-        }, 1000);
-    }
-
-    switchImgage(selectedImageName){
-        this.imgUrl = selectedImageName;
+        // Vertical stepper form
+        this.verticalStepperForm = this._formBuilder.group({
+            step1: this._formBuilder.group({
+                email   : ['', [Validators.required, Validators.email]],
+                country : ['', Validators.required],
+                language: ['', Validators.required]
+            }),
+            step2: this._formBuilder.group({
+                firstName: ['', Validators.required],
+                lastName : ['', Validators.required],
+                userName : ['', Validators.required],
+                about    : ['']
+            }),
+            step3: this._formBuilder.group({
+                byEmail          : this._formBuilder.group({
+                    companyNews     : [true],
+                    featuredProducts: [false],
+                    messages        : [true]
+                }),
+                pushNotifications: ['everything', Validators.required]
+            })
+        });
     }
 }

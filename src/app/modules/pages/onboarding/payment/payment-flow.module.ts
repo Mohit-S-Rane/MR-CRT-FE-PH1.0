@@ -15,6 +15,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { PaymentFlowComponent } from './view/payment-flow.component';
 import { PaymentFlowRoutes } from './payment-flow.router';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [PaymentFlowComponent],
@@ -33,6 +34,7 @@ import { PaymentFlowRoutes } from './payment-flow.router';
     MatMenuModule,
     MatDatepickerModule,
     MatMomentDateModule,
+    MatStepperModule,
   ],
 })
 export class PaymentFlowModule {}
