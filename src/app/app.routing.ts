@@ -120,7 +120,7 @@ export const appRoutes: Route[] = [
 
             // Consumer -- Dashboard
             {path: 'consumer', children: [
-                {path: 'dashboard', loadChildren: () => import('app/modules/pages/onboarding/complete-reservation/complete-reservation.model').then(m => m.CompleteReservationModule)},
+                {path: 'dashboard', loadChildren: () => import('app/modules/pages/consumer/dashboard/consumer-dashboard.module').then(m => m.ConsumerDashboardModule)},
             ]},
 
             // Associate -- Dashboard
