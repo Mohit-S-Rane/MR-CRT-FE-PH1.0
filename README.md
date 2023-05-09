@@ -16,7 +16,7 @@ CarRentX is a car rental platform, supplier oriented, with a backend for managin
 
 ## Authors
 
-Mohit Rane [@Mohit_S_Rane](http://mohitsrane.com) follow me...
+Mohit Rane [@Mohit_S_Rane](http://mohitsrane.com) follow me.....
 
 ## License
 
